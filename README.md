@@ -28,6 +28,14 @@ Download or clone directory. Move to the directory in the command line and open 
   * Input: Large pizza with 3 toppings
   * Output: 21
 
+#### Returns price based on size
+  * Input: Medium pizza
+  * Output: 12
+
+#### Returns price based on size and toppings
+  * Input: Medium pizza, 5 toppings
+  * Output: 22
+
 
 ## Legal
 Copyright (c) 2017 Copyright Ryan McAlpin All Rights Reserved.<br/>
