@@ -21,8 +21,12 @@ Download or clone directory. Move to the directory in the command line and open 
 ## Specifications
 
 #### Returns a base price
-  * Input:
-  * Output: 
+  * Input: Large pizza
+  * Output: 15
+
+#### Returns base price with $2 added per topping
+  * Input: Large pizza with 3 toppings
+  * Output: 21
 
 
 ## Legal
