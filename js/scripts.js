@@ -6,19 +6,19 @@ function Pizza(size) {
 Pizza.prototype.getPrice = function() {
   var basePrice;
   switch (this.size) {
-    case "Extra Large":
+    case "xl":
       basePrice = 20;
       break;
-    case "Large":
+    case "lg":
       basePrice = 15;
       break;
-    case "Medium":
+    case "md":
       basePrice = 12;
       break;
-    case "Small":
+    case "sm":
       basePrice = 10;
       break;
-    case "Mini":
+    case "mi":
       basePrice = 8;
       break;
   }
