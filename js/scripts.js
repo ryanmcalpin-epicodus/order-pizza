@@ -79,12 +79,12 @@ var makeOrderText = function(price, amount) {
   return txt;
 }
 
-var pizzaDescription = function(size, toppings) {
+var pizzaDescription = function(size, toppings, price) {
   var description;
   if (!toppings) {
-    description = "<li>" + size + " cheese pie</li>"
+    description = "<li>" + size + " cheese pie ($" + price + ")</li>"
   } else {
-    description = "<li>" + size + " pie with " + toppings + "</li>"
+    description = "<li>" + size + " pie with " + toppings + " ($" + price + ")</li>"
   }
   return description;
 }
@@ -105,7 +105,7 @@ $(document).ready(function() {
       var newPizza = new Pizza(size, toppings);
       pizzas.push(newPizza);
       console.log(pizzas);
-      var description = pizzaDescription(newPizza.size, newPizza.getToppings());
+      var description = pizzaDescription(newPizza.size, newPizza.getToppings(), newPizza.getPrice());
       $("ul#pies-display").append(description);
 
       clearInputs();
