@@ -45,14 +45,20 @@ Order.prototype.totalPrice = function() {
   return total;
 }
 
-var pizzas = [];
 
+//UI LOGIC
+var pizzas = [];
+var ind = -1;
+var clearInputs = function() {
+  $("input").prop("checked", false);
+}
+var clearPriceDisplay = function() {
+  $("#order-display").text("");
+}
 
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
-
-
 
     var size = $("input:radio[name=size]:checked").val();
     var toppings = [];
@@ -62,17 +68,22 @@ $(document).ready(function() {
     var newPizza = new Pizza(size, toppings);
     pizzas.push(newPizza);
     console.log(pizzas);
-    $("ul#pies-display").append("<li>" + newPizza.size + " pie with " + newPizza.getToppings() + "</li>");
-    // $("ul#order-display").append("<li><span class='pizza'>" + newPizza.size + "</span></li>");
+    $("ul#pies-display").append("<li>" + newPizza.size + " pie with " + newPizza.getToppings() + " <span class='pizza'>[x]</span></li>");
 
-    // $(".pizza").last().click(function() {
-    //   $("#pizza-display").text(newPizza.getToppings());
-    // });
+    ind++
+    $(".pizza").last().click(function() {
+      console.log(this);
+      $(this).parent().remove();
+      pizzas.splice(ind, 1);
+    });
+    clearInputs();
+    clearPriceDisplay();
   });
 
   $("#order").click(function() {
     var newOrder = new Order(pizzas);
     console.log(newOrder);
     $("#order-display").text("Your total is $" + newOrder.totalPrice() + ".");
+    clearInputs();
   });
 });
