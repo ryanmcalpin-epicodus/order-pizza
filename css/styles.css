@@ -18,3 +18,7 @@ body {
   color: inherit;
   font-size: inherit;
 }
+
+#remove {
+  margin-top: 10px;
+}
